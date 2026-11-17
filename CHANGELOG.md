@@ -6,6 +6,19 @@ Versions follow [Semantic Versioning](https://semver.org/).
 Releases before 0.12.0 carry their notes on the GitHub release itself
 (the commit subjects since the previous tag).
 
+## [0.16.3] - 2026-11-17
+
+### Fixed
+- **A recurring event that was moved into another week shows up in that week.** A
+  calendar event whose single occurrence was moved (a RECURRENCE-ID) to a day in a
+  different week disappeared from the board and the upcoming list: the week it
+  left dropped the card, and the week it landed in never looked for it. Moves
+  within the same week already worked. The planner now also looks at the original
+  day of a moved occurrence when the new day (or the event's span) falls in the
+  week you are viewing, so the card appears on the day it was moved to.
+  Cancelled dates, end dates and occurrence limits still apply. Thanks to
+  @Egger1513 for the fix (#58, closes #57).
+
 ## [0.16.2] - 2026-09-26
 
 ### Fixed
